@@ -1,31 +1,24 @@
 pipeline {
-    agent {label "slave"}
-
+    agent any
     stages {
-        stage('Git-Pull-Stage') {
+        stage('git-pull') {
             steps {
-                git branch: 'main', url: 'https://github.com/Anilbamnote/student-ui-app.git'
-                echo 'Pull success'
+                echo "pull-sucess"
             }
         }
-
-        stage('Build-Stage') {
+        stage('Build') {
             steps {
-                
-                
-                echo 'build stage success'
+                echo "build-sucess"
             }
         }
-
-        stage('Test-Stage') {
+        stage('Test') {
             steps {
-                echo 'Test Success'
+                echo "test sucess"
             }
         }
-
-        stage('Deploy-Stage') {
+        stage('Deploy') {
             steps {
-                echo 'Deploy Success'
+                echo "deploy sucess"
             }
         }
     }
